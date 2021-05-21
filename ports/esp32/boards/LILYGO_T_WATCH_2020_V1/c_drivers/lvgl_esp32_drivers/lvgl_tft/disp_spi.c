@@ -54,6 +54,17 @@ static transaction_cb_t chained_post_cb;
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
+ 
+void disp_spi_send_data(uint8_t *data, uint16_t length) {
+    disp_spi_transaction(data, length, DISP_SPI_SEND_POLLING, NULL, 0);
+}
+
+void disp_spi_send_colors(uint8_t *data, uint16_t length) {
+    disp_spi_transaction(data, length,
+        DISP_SPI_SEND_QUEUED | DISP_SPI_SIGNAL_FLUSH,
+        NULL, 0);
+}
+
 void disp_spi_add_device_config(spi_host_device_t host, spi_device_interface_config_t *devcfg)
 {
     chained_post_cb=devcfg->post_cb;

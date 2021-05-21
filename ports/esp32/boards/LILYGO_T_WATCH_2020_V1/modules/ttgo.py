@@ -13,14 +13,15 @@ from machine import Pin, I2C, PWM
 
 class Watch:
     def __init__(self):
-        self.__i2c__ = I2C(1, scl=Pin(22), sda=Pin(21))
+        self.__i2c__ = I2C(scl=Pin(22), sda=Pin(21))
         self.pmu = axp202.PMU(self.__i2c__)
         self.init_power()
         self.tft = self.__init_display__()
         self.touch = self.__init_touch__()
         self.motor = Motor()
         self.rtc = PCF8563(self.__i2c__)
-        self.bma = self.__init_bma__()
+        # self.bma = self.__init_bma__()
+        self.bma = None
         self.ticker = None
 
     def __init_touch__(self):
