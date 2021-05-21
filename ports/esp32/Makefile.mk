@@ -390,6 +390,7 @@ LIB_SRC_C += \
 	$(ESPIDFMOD_MODULE) \
 	lib/lv_bindings/driver/esp32/modxpt2046.c \
 	lib/lv_bindings/driver/esp32/modILI9341.c \
+	lib/lv_bindings/driver/esp32/font_dealerplate_california_80.c \
 
 DRIVERS_SRC_C = $(addprefix drivers/,\
 	bus/softspi.c \

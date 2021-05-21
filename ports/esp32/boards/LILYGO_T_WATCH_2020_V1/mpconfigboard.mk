@@ -10,3 +10,4 @@ SDKCONFIG += boards/sdkconfig.240mhz
 
 $(shell cp $(BOARD_DIR)/files/lv_conf.h ../../lib/lv_bindings/lv_conf.h)
 $(shell cp $(BOARD_DIR)/files/modlvesp32.c ../../lib/lv_bindings/driver/esp32/modlvesp32.c)
+$(shell cp $(BOARD_DIR)/files/font_dealerplate_california_80.c ../../lib/lv_bindings/driver/esp32/font_dealerplate_california_80.c)
