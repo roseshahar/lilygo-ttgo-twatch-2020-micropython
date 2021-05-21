@@ -21,7 +21,7 @@ class Watch:
         self.motor = Motor()
         self.rtc = PCF8563(self.__i2c__)
         # self.bma = self.__init_bma__()
-        self.bma = None
+        self.bma = None  # BMA Doesn't work right now for me
         self.ticker = None
 
     def __init_touch__(self):
